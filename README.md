@@ -1,1 +1,1 @@
-# SQL_Practices
+# Structured Query Language
