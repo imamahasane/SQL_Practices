@@ -1,0 +1,1 @@
+select replace("Imam is a Data Scientest", "Data Scientest", "Data Analysist") as re_input_string;

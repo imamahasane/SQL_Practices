@@ -1,0 +1,1 @@
+select repeat('@', 10) as valu;

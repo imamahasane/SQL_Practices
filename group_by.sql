@@ -1,0 +1,1 @@
+select sex, sum(salary) as total_salary from emp_details group by sex;

@@ -1,0 +1,1 @@
+select length("Bangladesh") as total_len;
