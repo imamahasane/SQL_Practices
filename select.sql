@@ -1,0 +1,1 @@
+select name, age, city from emp_details;

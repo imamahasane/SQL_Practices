@@ -1,0 +1,1 @@
+select avg(salary) from emp_details;
