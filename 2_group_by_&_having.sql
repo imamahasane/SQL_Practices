@@ -68,4 +68,34 @@ from employees
 group by year(doj)
 order by year(doj);
 
-create table sales (product_id int, sell_price float, quantity int, state varchar(20 ))
+create table sales (product_id int, sell_price float, quantity int, state varchar(20));
+
+insert into sales values
+(121, 320.0, 3, 'California'),
+(121, 320.0, 6, 'Texas'),
+(121, 320.0, 4, 'Alaska'),
+(123, 390.0, 2, 'California'),
+(123, 390.0, 7, 'Washington'),
+(123, 390.0, 4, 'Ohia'),
+(121, 320.0, 7, 'California'),
+(121, 320.0, 2, 'Arizonal'),
+(123, 390.0, 8, 'Colorado');
+
+select * from sales;
+
+select product_id, sum(sell_price * quantity) as Revenue
+from sales
+group by product_id;
+ 
+create table c_product (product_id int, cost_price float);
+
+insert into c_product values
+(121, 270.0),
+(123, 250.0);
+
+select * from c_product;
+
+select c.product_id, sum((s.sell_price - c.cost_price) * s.quantity) as profit
+from sales as s inner join c_product as c
+where s.product_id = c.product_id
+group by c.product_id;
