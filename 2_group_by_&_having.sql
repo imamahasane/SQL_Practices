@@ -99,3 +99,32 @@ select c.product_id, sum((s.sell_price - c.cost_price) * s.quantity) as profit
 from sales as s inner join c_product as c
 where s.product_id = c.product_id
 group by c.product_id;
+
+
+# The Having clause is SQL operates on grouped record and return rows 
+# where aggregate function result matched with given conditions only.
+
+# Syntax
+# select column_names
+# from table_name
+# where condition
+# group by column_names
+# having condition
+# order by column_names 
+
+select * from employees;
+
+select dept, avg(salary) as avg_salary
+from employees
+group by dept
+having avg(salary) > 60000;
+
+select city, sum(salary) as total_salary
+from employees
+group by city
+having sum(salary) > 70000;
+
+select dept, count(*) as emp_count
+from employees
+group by dept
+having count(*) > 1;
